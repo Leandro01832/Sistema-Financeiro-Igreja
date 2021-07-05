@@ -1,0 +1,18 @@
+namespace business.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class Atualizar : DbMigration
+    {
+        public override void Up()
+        {
+            AlterColumn("dbo.Admin", "Password", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            AlterColumn("dbo.Admin", "Password", c => c.Int(nullable: false));
+        }
+    }
+}
