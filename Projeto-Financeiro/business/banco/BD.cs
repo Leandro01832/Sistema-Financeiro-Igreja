@@ -28,5 +28,14 @@ namespace business.banco
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
 
+        public int GetUltimoRegistroMovimentacao()
+        {
+            return 1;
+        }
+
+        public int GetUltimoRegistroPessoa()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

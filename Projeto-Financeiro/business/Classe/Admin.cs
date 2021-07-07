@@ -27,8 +27,8 @@ namespace business.Classe
 
         public bool verificarAutenticacao(Admin adm)
         {
-            if (this.bd.Pessoa.OfType<Admin>().FirstOrDefault(m => m.User == adm.User) != null &&
-                this.bd.Pessoa.OfType<Admin>().FirstOrDefault(m =>  m.Password == adm.Password) != null)
+            if (bd.Pessoa.OfType<Admin>().FirstOrDefault(m => m.User == adm.User) != null &&
+                bd.Pessoa.OfType<Admin>().FirstOrDefault(m =>  m.Password == adm.Password) != null)
                 return true;
             return false;
         }
@@ -36,10 +36,10 @@ namespace business.Classe
         public bool verificarTodos()
         {
             bool condicao = false;
-            var modelos = this.recuperar(typeof(Admin));
+            var modelos = modelocrud.modelos.OfType<Admin>();
 
             if(modelos != null)
-            foreach(var item in modelos.OfType<Admin>())
+            foreach(var item in modelos)
             {
                 if (this.verificarAutenticacao(item)) condicao = true;
             }

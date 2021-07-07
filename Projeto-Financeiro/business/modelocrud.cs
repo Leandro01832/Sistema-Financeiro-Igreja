@@ -17,13 +17,22 @@ namespace database
     {
         public modelocrud()
         {
-            this.bd = new BD();
+            bd = new BD();
         }
 
         [Key]
         public int Id { get; set; }    
 
-        public BD bd;
+        public static BD bd;
+
+        [NotMapped]
+        public static string textoPorcentagem = "0%";
+
+        [NotMapped]
+        public static List<modelocrud> modelos = new List<modelocrud>();
+
+        [NotMapped]
+        public static int condicaoTexto { get; set; }
 
         public void salvar()
         {
@@ -43,75 +52,79 @@ namespace database
             bd.SaveChanges();
         }
 
-        public  void alterar(modelocrud modelo)
+        public static int GeTotalRegistrosMovimentacao()
         {
-            if (modelo is Admin      ) { var model = (Admin      ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Comprador  ) { var model = (Comprador  ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Dizimo     ) { var model = (Dizimo     ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Oferta     ) { var model = (Oferta     ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Cantina    ) { var model = (Cantina    ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Bazar      ) { var model = (Bazar      ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Lava_Rapido) { var model = (Lava_Rapido) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Aluguel    ) { var model = (Aluguel    ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Compra     ) { var model = (Compra     ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Retiro     ) { var model = (Retiro     ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Transacao  ) { var model = (Transacao  ) modelo; bd.Entry(model).State = EntityState.Modified; }
-            if (modelo is Transporte ) { var model = (Transporte ) modelo; bd.Entry(model).State = EntityState.Modified; }
+            throw new NotImplementedException();
+        }
+
+        public static int GeTotalRegistrosPessoas()
+        {
+            throw new NotImplementedException();
+        }
+
+        public  void alterar()
+        {
+            if (this is Admin      ) { var model = (Admin      ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Comprador  ) { var model = (Comprador  ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Dizimo     ) { var model = (Dizimo     ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Oferta     ) { var model = (Oferta     ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Cantina    ) { var model = (Cantina    ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Bazar      ) { var model = (Bazar      ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Lava_Rapido) { var model = (Lava_Rapido) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Aluguel    ) { var model = (Aluguel    ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Compra     ) { var model = (Compra     ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Retiro     ) { var model = (Retiro     ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Transacao  ) { var model = (Transacao  ) this; bd.Entry(model).State = EntityState.Modified; }
+            if (this is Transporte ) { var model = (Transporte ) this; bd.Entry(model).State = EntityState.Modified; }
 
             bd.SaveChanges();
         }
 
-        public  void excluir(modelocrud modelo)
+        public  void excluir()
         {
-            if (this is Admin      ) { var model = (Admin      )modelo; bd.Pessoa      .Remove(model); }
-            if (this is Comprador  ) { var model = (Comprador  )modelo; bd.Pessoa      .Remove(model); }
-            if (this is Dizimo     ) { var model = (Dizimo     )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Oferta     ) { var model = (Oferta     )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Cantina    ) { var model = (Cantina    )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Bazar      ) { var model = (Bazar      )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Lava_Rapido) { var model = (Lava_Rapido)modelo; bd.Movimentacao.Remove(model); }
-            if (this is Aluguel    ) { var model = (Aluguel    )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Compra     ) { var model = (Compra     )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Retiro     ) { var model = (Retiro     )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Transacao  ) { var model = (Transacao  )modelo; bd.Movimentacao.Remove(model); }
-            if (this is Transporte ) { var model = (Transporte )modelo; bd.Movimentacao.Remove(model); }
+            if (this is Admin      ) { var model = (Admin      )this; bd.Pessoa      .Remove(model); }
+            if (this is Comprador  ) { var model = (Comprador  )this; bd.Pessoa      .Remove(model); }
+            if (this is Dizimo     ) { var model = (Dizimo     )this; bd.Movimentacao.Remove(model); }
+            if (this is Oferta     ) { var model = (Oferta     )this; bd.Movimentacao.Remove(model); }
+            if (this is Cantina    ) { var model = (Cantina    )this; bd.Movimentacao.Remove(model); }
+            if (this is Bazar      ) { var model = (Bazar      )this; bd.Movimentacao.Remove(model); }
+            if (this is Lava_Rapido) { var model = (Lava_Rapido)this; bd.Movimentacao.Remove(model); }
+            if (this is Aluguel    ) { var model = (Aluguel    )this; bd.Movimentacao.Remove(model); }
+            if (this is Compra     ) { var model = (Compra     )this; bd.Movimentacao.Remove(model); }
+            if (this is Retiro     ) { var model = (Retiro     )this; bd.Movimentacao.Remove(model); }
+            if (this is Transacao  ) { var model = (Transacao  )this; bd.Movimentacao.Remove(model); }
+            if (this is Transporte ) { var model = (Transporte )this; bd.Movimentacao.Remove(model); }
 
             bd.SaveChanges();
         }
 
-        public  modelocrud  recuperar(Type tipo, int id)
+        public  modelocrud  recuperar(int id)
         {
-            if (tipo.GetType() == typeof(Admin      )) { return bd.Pessoa      .First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Comprador  )) { return bd.Pessoa      .First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Dizimo     )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Oferta     )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Cantina    )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Bazar      )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Lava_Rapido)) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Aluguel    )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Compra     )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Retiro     )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Transacao  )) { return bd.Movimentacao.First(m => m.Id == id); }
-            if (tipo.GetType() == typeof(Transporte )) { return bd.Movimentacao.First(m => m.Id == id); }
+            if ( this is Admin      ) { return bd.Pessoa      .FirstOrDefault(m => m.Id == id); }
+            if ( this is Comprador  ) { return bd.Pessoa      .FirstOrDefault(m => m.Id == id); }
+            if ( this is Dizimo     ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Oferta     ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Cantina    ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Bazar      ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Lava_Rapido) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Aluguel    ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Compra     ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Retiro     ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Transacao  ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
+            if ( this is Transporte ) { return bd.Movimentacao.FirstOrDefault(m => m.Id == id); }
             return null;
         }
 
-        public List<modelocrud> recuperar(Type tipo)
+        public static List<modelocrud> recuperar()
         {
-            if (tipo.GetType() == typeof(Admin      )) { return bd.Pessoa      .Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Comprador  )) { return bd.Pessoa      .Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Dizimo     )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Oferta     )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Cantina    )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Bazar      )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Lava_Rapido)) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Aluguel    )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Compra     )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Retiro     )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Transacao  )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            if (tipo.GetType() == typeof(Transporte )) { return bd.Movimentacao.Cast<modelocrud>().ToList(); }
-            return null;
-        }       
-        
+             modelos.AddRange( bd.Pessoa      .Cast<modelocrud>().ToList());
+             modelos.AddRange( bd.Movimentacao.Cast<modelocrud>().ToList());
+            return modelos;
+        }
+
+        public static void calcularPorcentagem()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

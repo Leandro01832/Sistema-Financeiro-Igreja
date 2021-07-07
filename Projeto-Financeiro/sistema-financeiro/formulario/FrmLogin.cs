@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace sistema_financeiro.formulario
 {
-    public partial class Autenticação : Form
+    public partial class Autenticação : FrmPadrao
     {
         private Admin admin;
 
@@ -44,6 +44,11 @@ namespace sistema_financeiro.formulario
                 FrmPadrao.condicaoSistema = false;
                 MessageBox.Show("Você não esta autenticado!!!");
             }
+        }
+
+        private void Autenticação_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

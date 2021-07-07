@@ -106,6 +106,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Autenticação";
             this.Text = "FrmLogin";
+            this.Load += new System.EventHandler(this.Autenticação_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

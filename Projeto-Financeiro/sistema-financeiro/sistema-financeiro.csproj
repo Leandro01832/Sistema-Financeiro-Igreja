@@ -48,6 +48,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +68,102 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formulario\FormProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FormProgressBar.Designer.cs">
+      <DependentUpon>FormProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\FormProgressBar2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FormProgressBar2.Designer.cs">
+      <DependentUpon>FormProgressBar2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarAluguel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarAluguel.Designer.cs">
+      <DependentUpon>FrmCadastrarAluguel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarCompra.Designer.cs">
+      <DependentUpon>FrmCadastrarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarRetiro.Designer.cs">
+      <DependentUpon>FrmCadastrarRetiro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransacao.Designer.cs">
+      <DependentUpon>FrmCadastrarTransacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransporte.Designer.cs">
+      <DependentUpon>FrmCadastrarTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarBazar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarBazar.Designer.cs">
+      <DependentUpon>FrmCadastrarBazar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarCantina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarCantina.Designer.cs">
+      <DependentUpon>FrmCadastrarCantina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarDizimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarDizimo.Designer.cs">
+      <DependentUpon>FrmCadastrarDizimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarLavaRapido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarLavaRapido.Designer.cs">
+      <DependentUpon>FrmCadastrarLavaRapido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarOferta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarOferta.Designer.cs">
+      <DependentUpon>FrmCadastrarOferta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarPessoa\FrmCadastrarAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarPessoa\FrmCadastrarAdmin.Designer.cs">
+      <DependentUpon>FrmCadastrarAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarPessoa\FrmCadastrarComprador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\formularioCadastrarPessoa\FrmCadastrarComprador.Designer.cs">
+      <DependentUpon>FrmCadastrarComprador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\FrmCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FrmCrud.Designer.cs">
+      <DependentUpon>FrmCrud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\FrmListagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FrmListagem.Designer.cs">
+      <DependentUpon>FrmListagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="formulario\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +175,12 @@
     </Compile>
     <Compile Include="formulario\FrmPadrao.Designer.cs">
       <DependentUpon>FrmPadrao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formulario\FrmPesquisar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FrmPesquisar.Designer.cs">
+      <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </Compile>
     <Compile Include="formulario\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -85,14 +194,66 @@
     <Compile Include="formulario\MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirRelatorio.cs" />
     <Compile Include="MDISingleton.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formulario\FormProgressBar.resx">
+      <DependentUpon>FormProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FormProgressBar2.resx">
+      <DependentUpon>FormProgressBar2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarAluguel.resx">
+      <DependentUpon>FrmCadastrarAluguel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarCompra.resx">
+      <DependentUpon>FrmCadastrarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarRetiro.resx">
+      <DependentUpon>FrmCadastrarRetiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransacao.resx">
+      <DependentUpon>FrmCadastrarTransacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovimentacaoSaida\FrmCadastrarTransporte.resx">
+      <DependentUpon>FrmCadastrarTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarBazar.resx">
+      <DependentUpon>FrmCadastrarBazar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarCantina.resx">
+      <DependentUpon>FrmCadastrarCantina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarDizimo.resx">
+      <DependentUpon>FrmCadastrarDizimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarLavaRapido.resx">
+      <DependentUpon>FrmCadastrarLavaRapido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarMovvimentacaoEntrada\FrmCadastrarOferta.resx">
+      <DependentUpon>FrmCadastrarOferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarPessoa\FrmCadastrarAdmin.resx">
+      <DependentUpon>FrmCadastrarAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\formularioCadastrarPessoa\FrmCadastrarComprador.resx">
+      <DependentUpon>FrmCadastrarComprador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FrmCrud.resx">
+      <DependentUpon>FrmCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FrmListagem.resx">
+      <DependentUpon>FrmListagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmPadrao.resx">
       <DependentUpon>FrmPadrao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FrmPesquisar.resx">
+      <DependentUpon>FrmPesquisar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -109,6 +270,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

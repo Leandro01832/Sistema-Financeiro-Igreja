@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sistema_financeiro.formulario
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmPrincipal : FrmPadrao
     {
         public FrmPrincipal()
         {
@@ -29,7 +29,12 @@ namespace sistema_financeiro.formulario
             login.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer_Tick_1(object sender, EventArgs e)
         {
             if (FrmPadrao.condicaoSistema)
                 sistemaToolStripMenuItem.Enabled = true;

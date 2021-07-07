@@ -11,13 +11,14 @@ namespace business.Classe
     [Table("Movimentacao")]
     public abstract class Movimentacao : modelocrud
     {
-        private DateTime data;
-
-        public decimal Valor { get; set; }
-        public DateTime Data
+        public Movimentacao()
         {
-            get { return data; }
-            set { data = DateTime.Now; }
-        }         
+            Data = DateTime.Now;
+        }
+
+        public static int UltimoRegistro { get; set; }
+
+        public double Valor { get; set; }
+        public DateTime Data { get; set; }
     }
 }

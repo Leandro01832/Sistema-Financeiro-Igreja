@@ -15,25 +15,25 @@ namespace business.Classe
         [NotMapped]
         public static string Status { get; set; }
         [NotMapped]
-        public static decimal Saldo{get;set;}
+        public static double Saldo {get;set;}
 
 
         public void calcularSaldoCaixa(bool liquido)
         {
-            decimal valorPagar = 0;
-            decimal valorReceber = 0;
-            var contasPagar = this.recuperar(typeof(MovimentacaoSaida));
-            var contasReceber = this.recuperar(typeof(MovimentacaoEntrada));
+            double valorPagar = 0;
+            double valorReceber = 0;
+            var contasPagar = modelos.OfType<MovimentacaoSaida>();
+            var contasReceber = modelos.OfType<MovimentacaoEntrada>();
 
             if(contasPagar != null)
-            foreach (var item in contasPagar.OfType<MovimentacaoSaida>().Where(c => !c.Pago && c.Data.Day < DiaMesFechamento))
+            foreach (var item in contasPagar.Where(c => !c.Pago && c.Data.Day < DiaMesFechamento))
                 valorPagar += item.Valor;
 
 
             if (liquido)
             {
                 if(contasReceber != null)
-                foreach (var item in contasReceber.OfType<MovimentacaoEntrada>().Where(c => !c.Pago 
+                foreach (var item in contasReceber.Where(c => !c.Pago 
                 && c.Data.Day < DiaMesFechamento || c.Pago && c.Data.Day < DiaMesFechamento))
                     valorReceber += item.Valor;
 
@@ -47,7 +47,7 @@ namespace business.Classe
             {
                 Saldo = valorReceber - valorPagar;
                 if (contasReceber != null)
-                    foreach (var item in contasReceber.OfType<MovimentacaoEntrada>().Where(c => c.Pago
+                    foreach (var item in contasReceber.Where(c => c.Pago
                     && c.Data.Day < DiaMesFechamento))
                         valorReceber += item.Valor;
 
