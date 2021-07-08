@@ -12,6 +12,7 @@ namespace business.Classe
             Contato = new Contato();
         }
 
+        [NotMapped]
         public static int UltimoRegistro { get; set; }
         public string Nome { get; set; }
         public virtual Contato Contato { get; set; }

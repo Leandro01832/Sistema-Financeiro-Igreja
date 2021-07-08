@@ -27,7 +27,7 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
-            Aluguel a = (Aluguel)modelo;
+            Dizimo a = (Dizimo)modelo;
             try
             {
                 a.Valor = double.Parse(txtValor.Text);

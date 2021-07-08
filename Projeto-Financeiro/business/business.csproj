@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,49 +69,23 @@
     <Compile Include="Classe\Transacao.cs" />
     <Compile Include="Classe\Transporte.cs" />
     <Compile Include="Classe\Comprador.cs" />
-    <Compile Include="Migrations\202107040440242_Inicial.cs" />
-    <Compile Include="Migrations\202107040440242_Inicial.Designer.cs">
-      <DependentUpon>202107040440242_Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107040538351_Atualizar.cs" />
-    <Compile Include="Migrations\202107040538351_Atualizar.Designer.cs">
-      <DependentUpon>202107040538351_Atualizar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107041506089_Atualizar2.cs" />
-    <Compile Include="Migrations\202107041506089_Atualizar2.Designer.cs">
-      <DependentUpon>202107041506089_Atualizar2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107041519431_Atualizar3.cs" />
-    <Compile Include="Migrations\202107041519431_Atualizar3.Designer.cs">
-      <DependentUpon>202107041519431_Atualizar3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107042339028_Atualizar4.cs" />
-    <Compile Include="Migrations\202107042339028_Atualizar4.Designer.cs">
-      <DependentUpon>202107042339028_Atualizar4.cs</DependentUpon>
+    <Compile Include="Migrations\202107072154443_Inicial.cs" />
+    <Compile Include="Migrations\202107072154443_Inicial.Designer.cs">
+      <DependentUpon>202107072154443_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="modelocrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107040440242_Inicial.resx">
-      <DependentUpon>202107040440242_Inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107040538351_Atualizar.resx">
-      <DependentUpon>202107040538351_Atualizar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107041506089_Atualizar2.resx">
-      <DependentUpon>202107041506089_Atualizar2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107041519431_Atualizar3.resx">
-      <DependentUpon>202107041519431_Atualizar3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107042339028_Atualizar4.resx">
-      <DependentUpon>202107042339028_Atualizar4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107072154443_Inicial.resx">
+      <DependentUpon>202107072154443_Inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

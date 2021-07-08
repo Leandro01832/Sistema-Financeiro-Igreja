@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.Entity;
-using System.Data.SqlClient;
 using System.Linq;
 
 namespace database
@@ -21,9 +20,9 @@ namespace database
         }
 
         [Key]
-        public int Id { get; set; }    
+        public int Id { get; set; }
 
-        public static BD bd;
+        public BD bd;
 
         [NotMapped]
         public static string textoPorcentagem = "0%";
@@ -52,15 +51,6 @@ namespace database
             bd.SaveChanges();
         }
 
-        public static int GeTotalRegistrosMovimentacao()
-        {
-            throw new NotImplementedException();
-        }
-
-        public static int GeTotalRegistrosPessoas()
-        {
-            throw new NotImplementedException();
-        }
 
         public  void alterar()
         {
@@ -115,16 +105,95 @@ namespace database
             return null;
         }
 
-        public static List<modelocrud> recuperar()
+        public List<modelocrud> recuperar()
         {
-             modelos.AddRange( bd.Pessoa      .Cast<modelocrud>().ToList());
-             modelos.AddRange( bd.Movimentacao.Cast<modelocrud>().ToList());
+             modelos.AddRange( bd.Pessoa      .ToList());
+             modelos.AddRange( bd.Movimentacao.ToList());
             return modelos;
         }
 
-        public static void calcularPorcentagem()
+        public List<modelocrud> PesquisarPorData(List<modelocrud> modelos, DateTime comecar, DateTime terminar, string campo)
         {
-            throw new NotImplementedException();
+            List<modelocrud> q = null;
+            if (modelos.OfType<Movimentacao>().ToList().Count > 0 && campo == "Data")
+                q = modelos.OfType<Movimentacao>().Where(i => i.Data >= comecar && i.Data <= terminar).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<MovimentacaoEntrada>().ToList().Count > 0 && campo == "DataRecebimento")
+                q = modelos.OfType<MovimentacaoEntrada>().Where(i => i.DataRecebimento >= comecar && i.DataRecebimento <= terminar).Cast<modelocrud>().ToList();
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorData(List<modelocrud> modelos, DateTime apenasUmDia, string campo)
+        {
+            List<modelocrud> q = null;
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorMoeda(List<modelocrud> modelos, double comecar, double terminar, string campo)
+        {
+            List<modelocrud> q = null;
+            if (modelos.OfType<Movimentacao>().ToList().Count > 0 && campo == "Valor")
+            q = modelos.OfType<Movimentacao>().Where(i => i.Valor >= comecar && i.Valor <= terminar).Cast<modelocrud>().ToList();
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorNumero(List<modelocrud> modelos, int comecar, int terminar, string campo)
+        {
+            List<modelocrud> q = null;
+            if (modelos.OfType<Movimentacao>().ToList().Count > 0 && campo == "Id")
+                q = modelos.OfType<Movimentacao>().Where(i => i.Id >= comecar && i.Id <= terminar).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<Pessoa>().ToList().Count > 0 && campo == "Id")
+                q = modelos.OfType<Pessoa>().Where(i => i.Id >= comecar && i.Id <= terminar).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<MovimentacaoEntrada>().ToList().Count > 0 && campo == "Pessoa_")
+                q = modelos.OfType<MovimentacaoEntrada>().Where(i => i.Pessoa_ >= comecar && i.Pessoa_ <= terminar).Cast<modelocrud>().ToList();
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorNumero(List<modelocrud> modelos, int apenasUmNumero, string campo)
+        {
+            List<modelocrud> q = null;
+            if (modelos.OfType<Movimentacao>().ToList().Count > 0 && campo == "Id")
+                q = modelos.OfType<Movimentacao>().Where(i => i.Id >= apenasUmNumero).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<Pessoa>().ToList().Count > 0 && campo == "Id")
+                q = modelos.OfType<Pessoa>().Where(i => i.Id >= apenasUmNumero).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<MovimentacaoEntrada>().ToList().Count > 0 && campo == "Pessoa_")
+                q = modelos.OfType<MovimentacaoEntrada>().Where(i => i.Pessoa_ >= apenasUmNumero).Cast<modelocrud>().ToList();
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorTexto(List<modelocrud> modelos, string texto, string campo)
+        {
+            List<modelocrud> q = null;
+
+            if (modelos.OfType<Pessoa>().ToList().Count > 0 && campo == "Email")
+                q = modelos.OfType<Pessoa>().Where(p => p.Contato.Email.Contains(texto)).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<Pessoa>().ToList().Count > 0 && campo == "Nome")
+                q = modelos.OfType<Pessoa>().Where(p => p.Nome.Contains(texto)).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<Comprador>().ToList().Count > 0 && campo == "Email")
+                q = modelos.OfType<Comprador>().Where(p => p.Contato.Email.Contains(texto)).Cast<modelocrud>().ToList();
+
+            if (modelos.OfType<Comprador>().ToList().Count > 0 && campo == "Nome")
+                q = modelos.OfType<Comprador>().Where(p => p.Nome.Contains(texto)).Cast<modelocrud>().ToList();
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorHorario(List<modelocrud> modelos, TimeSpan comecar, TimeSpan terminar, string campo)
+        {
+            List<modelocrud> q = null;
+
+            return q;
+        }
+
+        public List<modelocrud> PesquisarPorHorario(List<modelocrud> modelos, TimeSpan apenasUmHorario, string campo)
+        {
+            List<modelocrud> q = null;
+            return q;
         }
     }
 }

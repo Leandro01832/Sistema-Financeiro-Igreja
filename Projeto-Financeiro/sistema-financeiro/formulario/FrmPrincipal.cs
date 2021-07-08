@@ -25,6 +25,7 @@ namespace sistema_financeiro.formulario
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+            UltimoRegistro();
             Autenticação login = new Autenticação();
             login.Show();
         }

@@ -10,6 +10,6 @@ namespace business.Classe
     [Table("MovimentacaoSaida")]
     public abstract class MovimentacaoSaida : Movimentacao
     {
-        public bool Pago { get; set; }
+        
     }
 }

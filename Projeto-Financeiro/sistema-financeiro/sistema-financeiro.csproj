@@ -57,6 +57,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -158,6 +159,12 @@
     <Compile Include="formulario\FrmCrud.Designer.cs">
       <DependentUpon>FrmCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario\FrmGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FrmGrafico.Designer.cs">
+      <DependentUpon>FrmGrafico.cs</DependentUpon>
+    </Compile>
     <Compile Include="formulario\FrmListagem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +250,9 @@
     <EmbeddedResource Include="formulario\FrmCrud.resx">
       <DependentUpon>FrmCrud.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FrmGrafico.resx">
+      <DependentUpon>FrmGrafico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmListagem.resx">
       <DependentUpon>FrmListagem.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,7 +292,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Database-Financeiro.mdf">

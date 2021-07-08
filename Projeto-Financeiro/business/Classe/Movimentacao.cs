@@ -16,9 +16,11 @@ namespace business.Classe
             Data = DateTime.Now;
         }
 
+        [NotMapped]
         public static int UltimoRegistro { get; set; }
 
         public double Valor { get; set; }
         public DateTime Data { get; set; }
+        public bool Pago { get; set; }
     }
 }

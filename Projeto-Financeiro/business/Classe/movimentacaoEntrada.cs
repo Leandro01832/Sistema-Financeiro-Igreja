@@ -10,7 +10,6 @@ namespace business.Classe
     [Table("MovimentacaoEntrada")]
     public class MovimentacaoEntrada : Movimentacao
     {
-        public bool Pago { get; set; }
         public DateTime? DataRecebimento { get; set; }
         public int? Pessoa_ { get; set; }
         [ForeignKey("Pessoa_")]

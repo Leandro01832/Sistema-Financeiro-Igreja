@@ -18,11 +18,8 @@ namespace sistema_financeiro.formulario
         {
             InitializeComponent();
         }
-
-        private static bool verificarLista = true;
-        private static bool podeVerificar = false;
+        
         private static bool executar = true;
-        private static bool verificarTimer = true;
 
         public static bool condicaoSistema { get; set; }
 
@@ -44,76 +41,22 @@ namespace sistema_financeiro.formulario
                 form.Text = "Barra de processamento - Processando dados";
                 form.Show();
 
-                var lc = await Task.Run(() => modelocrud.recuperar());
+                var lc = await Task.Run(() => new Admin().recuperar());
 
                 await Task.Run(() => {
 
                     while (int.Parse(modelocrud.textoPorcentagem.Replace("%", "")) < 99)
-                    { executar = false; podeVerificar = false; }
+                    { executar = false;  }
                 });
 
 
                 if (!form.IsDisposed)
                     form.Dispose();
 
-                executar = true; podeVerificar = true;
+                executar = true; 
             }
         }
-
-        private async void verifica()
-        {
-            if (verificarLista && podeVerificar)
-            {
-                verificarLista = false;
-                await verificarListagem();
-                verificarLista = true;
-            }
-        }
-
-        private async Task verificarListagem()
-        {
-            int registrosMovimentacao = modelocrud.GeTotalRegistrosMovimentacao();
-            int registrosPessoas = modelocrud.GeTotalRegistrosPessoas();
-            try
-            {
-                if (registrosMovimentacao != modelocrud.modelos.OfType<Movimentacao>().ToList().Count)
-                {
-                    FormProgressBar2 form = new FormProgressBar2();
-
-                    form.MdiParent = this.MdiParent;
-                    form.StartPosition = FormStartPosition.CenterScreen;
-                    form.Text = "Barra de processamento - Ministerios";
-                    form.Show();
-                    await Task.Run(() => recuperarRegistrosMovimentacao(modelocrud.bd.GetUltimoRegistroMovimentacao()));
-
-                    if (!form.IsDisposed)
-                        form.Dispose();
-
-                    Movimentacao.UltimoRegistro = modelocrud.modelos.OfType<Movimentacao>().OrderBy(m => m.Id).Last().Id;
-                }
-            }
-            catch { }            
-
-            try
-            {
-                if (registrosPessoas != modelocrud.modelos.OfType<Pessoa>().ToList().Count)
-                {
-                    FormProgressBar2 form = new FormProgressBar2();
-
-                    form.MdiParent = this.MdiParent;
-                    form.StartPosition = FormStartPosition.CenterScreen;
-                    form.Text = "Barra de processamento - Pessoas";
-                    form.Show();
-                    await Task.Run(() => recuperarRegistrosPessoa(modelocrud.bd.GetUltimoRegistroPessoa()));
-
-                    if (!form.IsDisposed)
-                        form.Dispose();
-
-                    Pessoa.UltimoRegistro = modelocrud.modelos.OfType<Pessoa>().OrderBy(m => m.Id).Last().Id;
-                }
-            }
-            catch { }
-        }
+        
 
         private void recuperarRegistrosPessoa(int v1)
         {
@@ -165,21 +108,8 @@ namespace sistema_financeiro.formulario
             }
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        private  void timer1_Tick(object sender, EventArgs e)
         {
-            if (verificarTimer)
-            {
-                verificarTimer = false;
-                verifica();
-
-                if (int.Parse(modelocrud.textoPorcentagem.Replace("%", "")) < 99)
-                    await Task.Run(() => verificarBoleanos());
-
-                if (int.Parse(modelocrud.textoPorcentagem.Replace("%", "")) < 99)
-                    await Task.Run(() => modelocrud.calcularPorcentagem());
-
-                verificarTimer = true;
-            }
 
             if (this is FrmListagem && Width < 150)
                 Width = 470;

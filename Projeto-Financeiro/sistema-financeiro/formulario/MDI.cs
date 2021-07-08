@@ -522,5 +522,12 @@ namespace sistema_financeiro.formulario
             form.MdiParent = this.MdiParent;
             form.Show();
         }
+
+        private void graficosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGrafico form = new FrmGrafico();
+            form.MdiParent = this.MdiParent;
+            form.Show();
+        }
     }
 }
