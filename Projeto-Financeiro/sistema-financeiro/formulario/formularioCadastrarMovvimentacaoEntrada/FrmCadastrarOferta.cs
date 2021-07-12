@@ -22,12 +22,19 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void FrmCadastrarOferta_Load(object sender, EventArgs e)
         {
+            var form = "Oferta";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Oferta a = (Oferta)modelo;
+            txtValor.Text = a.Valor.ToString();
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
-            Aluguel a = (Aluguel)modelo;
+            Oferta a = (Oferta)modelo;
             try
             {
                 a.Valor = double.Parse(txtValor.Text);

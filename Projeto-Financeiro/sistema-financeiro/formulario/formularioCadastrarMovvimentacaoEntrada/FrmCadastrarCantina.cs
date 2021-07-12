@@ -22,7 +22,17 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void FrmCadastrarCantina_Load(object sender, EventArgs e)
         {
+            var form = "Cantina";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Cantina a = (Cantina)modelo;
+            txtValor.Text = a.Valor.ToString();
+            checkBoxPagou.Checked = a.Pago;
+            if (a.Pessoa_ != null)
+                txt_numero_id.Text = a.Pessoa_.ToString();
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)

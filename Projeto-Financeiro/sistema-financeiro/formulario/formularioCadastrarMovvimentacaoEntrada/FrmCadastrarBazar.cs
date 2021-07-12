@@ -22,7 +22,15 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void FrmCadastrarBazar_Load(object sender, EventArgs e)
         {
+            var form = "Bazar";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Bazar a = (Bazar)modelo;
+            txtValor.Text = a.Valor.ToString();
+            checkBoxPagou.Checked = a.Pago;
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)

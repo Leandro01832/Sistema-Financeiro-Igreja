@@ -8,7 +8,7 @@ namespace business.banco
     {
         public BD() : base("Igreja")
         {
-            // Database.SetInitializer<BD>(null);
+             Database.SetInitializer<BD>(null);
             var assegurarDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }        
 

@@ -23,3 +23,4 @@ D:\codigo-github\Financeiro\Projeto-Financeiro\business\bin\Debug\EntityFramewor
 D:\codigo-github\Financeiro\Projeto-Financeiro\business\bin\Debug\EntityFramework.SqlServer.xml
 D:\codigo-github\Financeiro\Projeto-Financeiro\business\obj\Debug\business.Migrations.Inicial.resources
 D:\codigo-github\Financeiro\Projeto-Financeiro\business\obj\Debug\business.csproj.GenerateResource.cache
+D:\codigo-github\Financeiro\Projeto-Financeiro\business\obj\Debug\business.Migrations.Alteracao.resources

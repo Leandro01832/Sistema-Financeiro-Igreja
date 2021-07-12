@@ -16,11 +16,27 @@ namespace business.Classe
             Data = DateTime.Now;
         }
 
+        private double valor;
+        private bool pago;
+
         [NotMapped]
         public static int UltimoRegistro { get; set; }
 
-        public double Valor { get; set; }
+        public double Valor
+        {
+            get { return double.Parse(valor.ToString("F2")); }
+            set { valor = value; }
+        }
         public DateTime Data { get; set; }
+
         public bool Pago { get; set; }
+
+        public override string ToString()
+        {
+            if (condicaoTexto == 1)
+                return "Identificação: " + this.Id.ToString() + " - " + this.Data.ToString("dd/MM/yyyy");
+            else
+                return base.ToString();
+        }
     }
 }

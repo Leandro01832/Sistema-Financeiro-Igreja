@@ -78,5 +78,6 @@ D:\codigo-github\Sistema-Financeiro-Igreja\Projeto-Financeiro\sistema-financeiro
 D:\codigo-github\Sistema-Financeiro-Igreja\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema-financeiro.exe
 D:\codigo-github\Sistema-Financeiro-Igreja\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema-financeiro.pdb
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema_financeiro.formulario.FrmGrafico.resources
+D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema_financeiro.formulario.FrmGraficoCaixa.resources
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.dll
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.xml

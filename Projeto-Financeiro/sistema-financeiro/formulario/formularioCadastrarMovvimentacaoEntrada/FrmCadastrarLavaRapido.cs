@@ -22,12 +22,22 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void FrmCadastrarLavaRapido_Load(object sender, EventArgs e)
         {
+            var form = "Lava-Rápido";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Lava_Rapido a = (Lava_Rapido)modelo;
+            txtValor.Text = a.Valor.ToString();
+            checkBoxPagou.Checked = a.Pago;
+            if (a.Pessoa_ != null)
+            txt_numero_id.Text = a.Pessoa_.ToString();
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
-            Aluguel a = (Aluguel)modelo;
+            Lava_Rapido a = (Lava_Rapido)modelo;
             try
             {
                 a.Valor = double.Parse(txtValor.Text);
@@ -38,7 +48,7 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void txt_numero_id_TextChanged(object sender, EventArgs e)
         {
-            Bazar a = (Bazar)modelo;
+            Lava_Rapido a = (Lava_Rapido)modelo;
             try
             {
                 a.Pessoa_ = int.Parse(txt_numero_id.Text);

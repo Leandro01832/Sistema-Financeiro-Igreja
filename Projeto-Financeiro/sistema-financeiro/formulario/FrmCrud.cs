@@ -68,6 +68,9 @@ namespace sistema_financeiro.formulario
                 Cadastrar.Visible = true;
             }
 
+            if (condicaoAtualizar) Atualizar.Visible = true;
+            if (condicaoDeletar) Excluir.Visible = true;
+
             InitializeComponent();
         }
 
@@ -81,6 +84,7 @@ namespace sistema_financeiro.formulario
         private void Excluir_Click(object sender, EventArgs e)
         {
             modelo.excluir();
+            modelocrud.modelos.Remove(modelo);
             MessageBox.Show("Registro apagado com sucesso!!!");
         }
 
@@ -93,6 +97,7 @@ namespace sistema_financeiro.formulario
         private void Cadastrar_Click(object sender, EventArgs e)
         {
             modelo.salvar();
+            modelocrud.modelos.Add(modelo);
             MessageBox.Show("Cadastro realizado com sucesso!!!");
         }
 

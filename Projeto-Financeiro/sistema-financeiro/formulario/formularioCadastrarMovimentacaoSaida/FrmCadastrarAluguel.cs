@@ -28,7 +28,15 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
 
         private void FrmCadastrarAluguel_Load(object sender, EventArgs e)
         {
+            var form = "Aluguel";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Aluguel a = (Aluguel)modelo;
+            txtValor.Text = a.Valor.ToString();
+            checkBoxPagou.Checked = a.Pago;
         }
 
         private void checkBoxPagou_CheckedChanged(object sender, EventArgs e)

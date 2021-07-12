@@ -22,7 +22,14 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovvimentacaoEntrada
 
         private void FrmCadastrarDizimo_Load(object sender, EventArgs e)
         {
+            var form = "Dízimo";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Dizimo a = (Dizimo)modelo;
+            txtValor.Text = a.Valor.ToString();
         }
 
         private void txtValor_TextChanged(object sender, EventArgs e)

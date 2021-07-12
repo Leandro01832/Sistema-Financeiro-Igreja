@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace business.Classe
 {
-   public class Bazar : MovimentacaoEntrada
+    [Table("Bazar")]
+    public class Bazar : MovimentacaoEntrada
     {
     }
 }

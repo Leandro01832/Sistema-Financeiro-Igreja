@@ -165,6 +165,12 @@
     <Compile Include="formulario\FrmGrafico.Designer.cs">
       <DependentUpon>FrmGrafico.cs</DependentUpon>
     </Compile>
+    <Compile Include="formulario\FrmGraficoCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formulario\FrmGraficoCaixa.Designer.cs">
+      <DependentUpon>FrmGraficoCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="formulario\FrmListagem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmGrafico.resx">
       <DependentUpon>FrmGrafico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formulario\FrmGraficoCaixa.resx">
+      <DependentUpon>FrmGraficoCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formulario\FrmListagem.resx">
       <DependentUpon>FrmListagem.cs</DependentUpon>

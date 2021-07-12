@@ -22,12 +22,20 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
 
         private void FrmCadastrarTransacao_Load(object sender, EventArgs e)
         {
+            var form = "Transação";
+            if (CondicaoAtualizar) this.Text = "Atualizar registro - " + form;
+            if (CondicaoDeletar) this.Text = "Deletar registro - " + form;
+            if (CondicaoDetalhes) this.Text = "Detalhes registro - " + form;
+            if (!CondicaoDeletar && !CondicaoAtualizar && !CondicaoDetalhes) this.Text = "Cadastro - " + form;
 
+            Transacao a = (Transacao)modelo;
+            txtValor.Text = a.Valor.ToString();
+            checkBoxPagou.Checked = a.Pago;
         }
 
         private void checkBoxPagou_CheckedChanged(object sender, EventArgs e)
         {
-            Aluguel a = (Aluguel)modelo;
+            Transacao a = (Transacao)modelo;
 
             if (checkBoxPagou.Checked)
                 a.Pago = true;
@@ -37,7 +45,7 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
 
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
-            Aluguel a = (Aluguel)modelo;
+            Transacao a = (Transacao)modelo;
             try
             {
                 a.Valor = double.Parse(txtValor.Text);

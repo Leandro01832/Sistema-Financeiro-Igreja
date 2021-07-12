@@ -144,6 +144,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.gráficoDeMovimentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gráficoCaixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -995,6 +997,9 @@
             // 
             // graficosToolStripMenuItem
             // 
+            this.graficosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gráficoDeMovimentoToolStripMenuItem,
+            this.gráficoCaixaToolStripMenuItem});
             this.graficosToolStripMenuItem.Name = "graficosToolStripMenuItem";
             this.graficosToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
             this.graficosToolStripMenuItem.Text = "Gráficos";
@@ -1101,6 +1106,20 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // gráficoDeMovimentoToolStripMenuItem
+            // 
+            this.gráficoDeMovimentoToolStripMenuItem.Name = "gráficoDeMovimentoToolStripMenuItem";
+            this.gráficoDeMovimentoToolStripMenuItem.Size = new System.Drawing.Size(286, 32);
+            this.gráficoDeMovimentoToolStripMenuItem.Text = "Gráfico de movimento";
+            this.gráficoDeMovimentoToolStripMenuItem.Click += new System.EventHandler(this.gráficoDeMovimentoToolStripMenuItem_Click);
+            // 
+            // gráficoCaixaToolStripMenuItem
+            // 
+            this.gráficoCaixaToolStripMenuItem.Name = "gráficoCaixaToolStripMenuItem";
+            this.gráficoCaixaToolStripMenuItem.Size = new System.Drawing.Size(286, 32);
+            this.gráficoCaixaToolStripMenuItem.Text = "Gráfico Caixa ";
+            this.gráficoCaixaToolStripMenuItem.Click += new System.EventHandler(this.gráficoCaixaToolStripMenuItem_Click);
             // 
             // MDI
             // 
@@ -1245,6 +1264,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem46;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem47;
         private System.Windows.Forms.ToolStripMenuItem graficosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gráficoDeMovimentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gráficoCaixaToolStripMenuItem;
     }
 }
 

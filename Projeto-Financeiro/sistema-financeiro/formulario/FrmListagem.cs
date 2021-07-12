@@ -84,7 +84,7 @@ namespace sistema_financeiro.formulario
             try
             {
                 lista.Text = lista.SelectedValue.ToString();
-                this.numero = int.Parse(Regex.Match(this.Text, @"\d+").Value);
+                this.numero = int.Parse(Regex.Match(lista.Text, @"\d+").Value);
             }
             catch (Exception)
             {
@@ -135,9 +135,7 @@ namespace sistema_financeiro.formulario
                 catch { }
             }
 
-        }
-
-       
+        }       
 
         private void BotaoDetalhes_Click(object sender, EventArgs e)
         {
@@ -224,6 +222,7 @@ namespace sistema_financeiro.formulario
 
         private void FrmListagem_Load(object sender, EventArgs e)
         {
+            modelocrud.condicaoTexto = 1;
             this.Size = new Size(900, 350);
             lista.Dock = DockStyle.Left;
 
@@ -279,6 +278,17 @@ namespace sistema_financeiro.formulario
                 botaoDetalhes.Enabled = atualizar;
                 botaoAtualizar.Enabled = atualizar;
                 botaoDeletar.Enabled = atualizar;
+            }
+            else
+            {
+                if (Tipo == typeof(Movimentacao))
+                    lista.DataSource = modelocrud.modelos.OfType<Movimentacao>().ToList();
+                if (Tipo == typeof(MovimentacaoEntrada))
+                    lista.DataSource = modelocrud.modelos.OfType<MovimentacaoEntrada>().ToList();
+                if (Tipo == typeof(MovimentacaoSaida))
+                    lista.DataSource = modelocrud.modelos.OfType<MovimentacaoSaida>().ToList();
+                if (Tipo == typeof(Pessoa))
+                    lista.DataSource = modelocrud.modelos.OfType<Pessoa>().ToList();
             }
         }
     }

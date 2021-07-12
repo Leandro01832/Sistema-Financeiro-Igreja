@@ -105,56 +105,56 @@ namespace sistema_financeiro.formulario
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCadastrarAdmin form = new FrmCadastrarAdmin(new Admin(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void compradorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCadastrarComprador form = new FrmCadastrarComprador(new Comprador(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
             FrmCadastrarDizimo form = new FrmCadastrarDizimo(new Dizimo(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem9_Click(object sender, EventArgs e)
         {
             FrmCadastrarCantina form = new FrmCadastrarCantina(new Cantina(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
         {
             FrmCadastrarOferta form = new FrmCadastrarOferta(new Oferta(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void bazarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmCadastrarBazar form = new FrmCadastrarBazar(new Bazar(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void lavaRapidoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmCadastrarLavaRapido form = new FrmCadastrarLavaRapido(new Lava_Rapido(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem11_Click(object sender, EventArgs e)
         {
-            FrmCadastrarRetiro form = new FrmCadastrarRetiro(new Compra(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            FrmCadastrarCompra form = new FrmCadastrarCompra(new Compra(), false, false, false);
+            form.MdiParent = this;
             form.Show();
 
         }
@@ -162,7 +162,7 @@ namespace sistema_financeiro.formulario
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
         {
             FrmCadastrarTransporte form = new FrmCadastrarTransporte(new Transporte(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
 
         }
@@ -170,21 +170,21 @@ namespace sistema_financeiro.formulario
         private void toolStripMenuItem13_Click(object sender, EventArgs e)
         {
             FrmCadastrarTransacao form = new FrmCadastrarTransacao(new Transacao(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem14_Click(object sender, EventArgs e)
         {
             FrmCadastrarRetiro form = new FrmCadastrarRetiro(new Retiro(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem15_Click(object sender, EventArgs e)
         {
             FrmCadastrarAluguel form = new FrmCadastrarAluguel(new Aluguel(), false, false, false);
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
@@ -206,112 +206,112 @@ namespace sistema_financeiro.formulario
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Pessoa));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Admin));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Comprador));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Movimentacao));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(MovimentacaoEntrada));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(MovimentacaoSaida));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Compra));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void transporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Transporte));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void transaçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Transacao));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void retiroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Retiro));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void aluguelToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Aluguel));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void dizimoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Dizimo));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void cantinaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Cantina));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void ofertaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Oferta));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void bazarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Bazar));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
         private void lavaRapidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListagem lista = new FrmListagem(typeof(Lava_Rapido));
-            lista.MdiParent = this.MdiParent;
+            lista.MdiParent = this;
             lista.Show();
         }
 
@@ -414,119 +414,130 @@ namespace sistema_financeiro.formulario
         private void toolStripMenuItem32_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Pessoa));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem33_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Admin));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem34_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Comprador));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem36_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(MovimentacaoEntrada));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem42_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(MovimentacaoSaida));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem35_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Movimentacao));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem37_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Dizimo));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem38_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Cantina));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem39_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Oferta));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem40_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Bazar));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem41_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Lava_Rapido));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem43_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Compra));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem44_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Transporte));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem45_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Transacao));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem46_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Retiro));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void toolStripMenuItem47_Click(object sender, EventArgs e)
         {
             FrmPesquisar form = new FrmPesquisar(typeof(Aluguel));
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
             form.Show();
         }
 
         private void graficosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        }
+
+        private void gráficoDeMovimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FrmGrafico form = new FrmGrafico();
-            form.MdiParent = this.MdiParent;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void gráficoCaixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGraficoCaixa form = new FrmGraficoCaixa();
+            form.MdiParent = this;
             form.Show();
         }
     }

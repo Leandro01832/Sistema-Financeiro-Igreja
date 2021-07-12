@@ -11,6 +11,9 @@ namespace business.Classe
     [Table("Dizimo")]
     public class Dizimo : MovimentacaoEntrada
     {
-        
+        public Dizimo()
+        {
+            this.Pessoa_ = null;
+        }
     }
 }

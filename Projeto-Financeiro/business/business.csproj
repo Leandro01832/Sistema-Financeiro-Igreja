@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202107072154443_Inicial.Designer.cs">
       <DependentUpon>202107072154443_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107120122501_Alteracao.cs" />
+    <Compile Include="Migrations\202107120122501_Alteracao.Designer.cs">
+      <DependentUpon>202107120122501_Alteracao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="modelocrud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107072154443_Inicial.resx">
       <DependentUpon>202107072154443_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107120122501_Alteracao.resx">
+      <DependentUpon>202107120122501_Alteracao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
