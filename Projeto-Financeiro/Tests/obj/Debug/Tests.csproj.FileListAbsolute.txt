@@ -1,0 +1,15 @@
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\Tests.exe.config
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\Tests.exe
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\Tests.pdb
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\business.dll
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\EntityFramework.dll
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\EntityFramework.SqlServer.dll
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\business.pdb
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\business.dll.config
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\EntityFramework.xml
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\bin\Debug\EntityFramework.SqlServer.xml
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\obj\Debug\Tests.csprojAssemblyReference.cache
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\obj\Debug\Tests.csproj.CopyComplete
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\obj\Debug\Tests.exe
+D:\codigo-github\Financeiro\Projeto-Financeiro\Tests\obj\Debug\Tests.pdb

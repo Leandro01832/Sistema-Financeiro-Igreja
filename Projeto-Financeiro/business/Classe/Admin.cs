@@ -17,6 +17,11 @@ namespace business.Classe
         public string Password { get; set; }
         public string Permissao { get; set; }
 
+        public Admin()
+        {
+            
+        }
+
         [NotMapped]
         public static string PrimeiroAdminUser = "leandro";
         [NotMapped]
@@ -41,7 +46,11 @@ namespace business.Classe
             if(modelos != null)
             foreach(var item in modelos)
             {
-                if (this.verificarAutenticacao(item)) condicao = true;
+                    if (this.verificarAutenticacao(item))
+                    {
+                        condicao = true;
+                        this.Permissao = item.Permissao;
+                    }
             }
 
             return condicao;

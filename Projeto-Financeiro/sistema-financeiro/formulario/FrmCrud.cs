@@ -111,7 +111,26 @@ namespace sistema_financeiro.formulario
 
         private void FrmCrud_Load(object sender, EventArgs e)
         {
-
-        }
+            if(modelo is Dizimo      && !admin.Permissao.Contains("Dizimo"     ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Oferta      && !admin.Permissao.Contains("Oferta"     ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Cantina     && !admin.Permissao.Contains("Cantina"    ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Bazar       && !admin.Permissao.Contains("Bazar"      ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Lava_Rapido && !admin.Permissao.Contains("Lava_Rapido"))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Aluguel     && !admin.Permissao.Contains("Aluguel"    ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Compra      && !admin.Permissao.Contains("Compra"     ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Retiro      && !admin.Permissao.Contains("Retiro"     ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Transacao   && !admin.Permissao.Contains("Transacao"  ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false;}
+            if(modelo is Transporte && !admin.Permissao.Contains("Transporte"  ))
+            { Cadastrar.Enabled = false; Atualizar.Enabled = false; Excluir.Enabled = false; }
+        }                                                                        
     }
 }

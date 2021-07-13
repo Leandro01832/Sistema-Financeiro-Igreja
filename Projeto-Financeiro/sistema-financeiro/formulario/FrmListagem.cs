@@ -30,6 +30,24 @@ namespace sistema_financeiro.formulario
         public FrmListagem(Type tipo)
         {
             this.Tipo = tipo;
+            this.Text = "Lista de ";
+
+            if(tipo == typeof(Pessoa             )) this.Text += "Pessoas";
+            if(tipo == typeof(Admin              )) this.Text += "Administradoes";
+            if(tipo == typeof(Comprador          )) this.Text += "Compradores";
+            if(tipo == typeof(Dizimo             )) this.Text += "Dizimos";
+            if(tipo == typeof(Oferta             )) this.Text += "Ofertas";
+            if(tipo == typeof(Cantina            )) this.Text += "Cantinas";
+            if(tipo == typeof(Bazar              )) this.Text += "Bazar";
+            if(tipo == typeof(Lava_Rapido        )) this.Text += "Lava-Rapido";
+            if(tipo == typeof(Aluguel            )) this.Text += "Alugueis";
+            if(tipo == typeof(Compra             )) this.Text += "Compras";
+            if(tipo == typeof(Retiro             )) this.Text += "Retiro";
+            if(tipo == typeof(Transacao          )) this.Text += "Transações";
+            if(tipo == typeof(Transporte         )) this.Text += "Transporte";
+            if(tipo == typeof(Movimentacao       )) this.Text += "Movimentação";
+            if(tipo == typeof(MovimentacaoEntrada)) this.Text += "Movimentação de entrada";
+            if(tipo == typeof(MovimentacaoSaida  )) this.Text += "Movimentação de saida";
 
             lista = new ListBox();
             lista.SelectedValueChanged += Lista_SelectedValueChanged;
@@ -228,7 +246,6 @@ namespace sistema_financeiro.formulario
 
             if (!Tipo.IsAbstract)
             {
-                bool condicao = false;
                 atualizar = false;
                 botaoAtualizarLista.Enabled = atualizar;
                 botaoDetalhes.Enabled = atualizar;
@@ -238,30 +255,40 @@ namespace sistema_financeiro.formulario
 
                 if (Tipo.IsSubclassOf(typeof(Movimentacao)))
                 {
-                    foreach (var m in modelocrud.modelos.OfType<Movimentacao>())
-                        if (Tipo.Name == m.GetType().Name)
-                        {
-                            condicao = true;
-                            break;
-                        }
-
-                    if (modelocrud.modelos.OfType<Movimentacao>().ToList().Count > 0 && condicao)
-                        lista.DataSource = modelocrud.modelos.OfType<Movimentacao>().Where(p => p.GetType().Name == Tipo.Name)
-                            .OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(MovimentacaoEntrada))
+                    lista.DataSource = modelocrud.modelos.OfType<MovimentacaoEntrada>().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(MovimentacaoSaida))
+                    lista.DataSource = modelocrud.modelos.OfType<MovimentacaoSaida>().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Dizimo))
+                    lista.DataSource = modelocrud.modelos.OfType<Dizimo>().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Dizimo     ))
+                    lista.DataSource = modelocrud.modelos.OfType<Dizimo     >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Oferta     ))
+                    lista.DataSource = modelocrud.modelos.OfType<Oferta     >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Cantina    ))
+                    lista.DataSource = modelocrud.modelos.OfType<Cantina    >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Bazar      ))
+                    lista.DataSource = modelocrud.modelos.OfType<Bazar      >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Lava_Rapido))
+                    lista.DataSource = modelocrud.modelos.OfType<Lava_Rapido>().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Aluguel    ))
+                    lista.DataSource = modelocrud.modelos.OfType<Aluguel    >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Compra     ))
+                    lista.DataSource = modelocrud.modelos.OfType<Compra     >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Retiro     ))
+                    lista.DataSource = modelocrud.modelos.OfType<Retiro     >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Transacao  ))
+                    lista.DataSource = modelocrud.modelos.OfType<Transacao  >().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Transporte ))
+                    lista.DataSource = modelocrud.modelos.OfType<Transporte>().OrderBy(p => p.Id).ToList();
                 }
 
                 if (Tipo.IsSubclassOf(typeof(Pessoa)))
                 {
-                    foreach (var m in modelocrud.modelos.OfType<Pessoa>())
-                        if (Tipo.Name == m.GetType().Name)
-                        {
-                            condicao = true;
-                            break;
-                        }
-
-                    if (modelocrud.modelos.OfType<Pessoa>().ToList().Count > 0 && condicao)
-                        lista.DataSource = modelocrud.modelos.OfType<Pessoa>().Where(p => p.GetType().Name == Tipo.Name)
-                            .OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Admin))
+                        lista.DataSource = modelocrud.modelos.OfType<Admin>().OrderBy(p => p.Id).ToList();
+                    if (Tipo == typeof(Comprador))
+                        lista.DataSource = modelocrud.modelos.OfType<Comprador>().OrderBy(p => p.Id).ToList();
                 }
                 else
             if (Tipo == typeof(Movimentacao) || Tipo == typeof(Pessoa))

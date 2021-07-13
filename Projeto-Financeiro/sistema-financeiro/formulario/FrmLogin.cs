@@ -14,8 +14,6 @@ namespace sistema_financeiro.formulario
 {
     public partial class Autenticação : FrmPadrao
     {
-        private Admin admin;
-
         public Autenticação()
         {
             InitializeComponent();
@@ -29,6 +27,7 @@ namespace sistema_financeiro.formulario
             if (Admin.PrimeiroAdminPassword == admin.Password &&
                 Admin.PrimeiroAdminUser == admin.User)
             {
+                admin.Permissao = Admin.PrimeiroAdminPermissao;
                 FrmPadrao.condicaoSistema = true;
                 MessageBox.Show("Você esta autenticado!!! Agora você pode acessar o sistema");
                 this.Dispose();

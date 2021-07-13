@@ -61,5 +61,11 @@ namespace sistema_financeiro.formulario.formularioCadastrarPessoa
             Admin c = (Admin)modelo;
             c.User = txtUsuario.Text;
         }
+
+        private void txtPermissao_TextChanged(object sender, EventArgs e)
+        {
+            Admin c = (Admin)modelo;
+            c.Permissao = txtPermissao.Text;
+        }
     }
 }

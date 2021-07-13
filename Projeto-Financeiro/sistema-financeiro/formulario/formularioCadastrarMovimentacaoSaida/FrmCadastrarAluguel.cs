@@ -37,6 +37,7 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
             Aluguel a = (Aluguel)modelo;
             txtValor.Text = a.Valor.ToString();
             checkBoxPagou.Checked = a.Pago;
+            txtNomeProduto.Text = a.NomeProduto;
         }
 
         private void checkBoxPagou_CheckedChanged(object sender, EventArgs e)
@@ -59,6 +60,11 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
             }
             catch { MessageBox.Show("digite numeros"); txtValor.Text = "";}
         }
-        
+
+        private void txtNomeProduto_TextChanged(object sender, EventArgs e)
+        {
+            Aluguel a = (Aluguel)modelo;
+            a.NomeProduto = txtNomeProduto.Text;
+        }
     }
 }

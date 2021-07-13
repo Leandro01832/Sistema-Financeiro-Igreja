@@ -31,6 +31,7 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
             Compra a = (Compra)modelo;
             txtValor.Text = a.Valor.ToString();
             checkBoxPagou.Checked = a.Pago;
+            txtNomeProduto.Text = a.NomeProduto;
         }
 
         private void checkBoxPagou_CheckedChanged(object sender, EventArgs e)
@@ -52,6 +53,12 @@ namespace sistema_financeiro.formulario.formularioCadastrarMovimentacaoSaida
                 a.Valor = double.Parse(a.Valor.ToString("F2"));
             }
             catch { MessageBox.Show("digite numeros"); txtValor.Text = ""; }
+        }
+
+        private void txtNomeProduto_TextChanged(object sender, EventArgs e)
+        {
+            Compra a = (Compra)modelo;
+            a.NomeProduto = txtNomeProduto.Text;
         }
     }
 }

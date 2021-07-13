@@ -18,7 +18,9 @@ namespace sistema_financeiro.formulario
         {
             InitializeComponent();
         }
-        
+
+        public static Admin admin;
+
         private static bool executar = true;
 
         public static bool condicaoSistema { get; set; }

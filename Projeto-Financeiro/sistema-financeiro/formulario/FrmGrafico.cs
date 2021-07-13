@@ -85,7 +85,7 @@ namespace sistema_financeiro.formulario
              chart1.ChartAreas[1].AxisX.MajorGrid.LineWidth = 2;
              chart1.ChartAreas[2].AxisX.MajorGrid.LineWidth = 2;            
 
-            chart1.ChartAreas[0].AxisX.Interval = 2;
+            chart1.ChartAreas[0].AxisX.Interval = 1;
             chart1.ChartAreas[0].AxisY.Maximum = 5000;
             chart1.ChartAreas[0].AxisY.Interval = 500;
 
@@ -172,30 +172,28 @@ namespace sistema_financeiro.formulario
             m.Data.Month == dateEscolhida.Value.Month &&
             m.Data.Year == dateEscolhida.Value.Year).ToList();
 
-            bool existeMovimentacaoEntrada = me.FirstOrDefault() != null;
-            bool existeMovimentacaoSaida = ms.FirstOrDefault() != null;
+            //bool existeMovimentacaoEntrada = me.FirstOrDefault() != null;
+            //bool existeMovimentacaoSaida = ms.FirstOrDefault() != null;
 
-            if (existeMovimentacaoEntrada && existeMovimentacaoSaida)
-            {
-                int numMaior = 0;
-                int numMenor = 0;
-                if (me.Last().Id > ms.Last().Id) numMaior = me.Last().Id; else numMaior = ms.Last().Id;
-                if (me.First().Id < ms.First().Id) numMenor = me.First().Id; else numMenor = ms.First().Id;
+            //if (existeMovimentacaoEntrada && existeMovimentacaoSaida)
+            //{
+            //    int numMenor = 0;
+            //    if (me.First().Id < ms.First().Id) numMenor = me.First().Id; else numMenor = ms.First().Id;
 
-                chart1.ChartAreas[0].AxisX.Maximum = numMenor + me.Count() + ms.Count();
-                chart1.ChartAreas[0].AxisX.Minimum = numMaior - me.Count() - ms.Count();
-            }
+            //    chart1.ChartAreas[0].AxisX.Maximum = numMenor + me.Count() + ms.Count();
+            //    chart1.ChartAreas[0].AxisX.Minimum = numMenor;
+            //}
 
 
             foreach (var item in me)
             {
-                chart1.Series["MovimentoEntrada"].Points.AddXY(item.Id, item.Valor);
+                chart1.Series["MovimentoEntrada"].Points.AddXY( item.Id.ToString(), item.Valor);
             }
 
 
             foreach (var item in ms)
             {
-                chart1.Series["MovimentoSaida"].Points.AddXY(item.Id, item.Valor);
+                chart1.Series["MovimentoSaida"].Points.AddXY( item.Id.ToString(), item.Valor);
             }            
 
             for (int i = 1; i <= 12; i++)
@@ -244,7 +242,7 @@ namespace sistema_financeiro.formulario
             double valorSaida = 0;
             DateTime data = DateTime.Now;
 
-            for (int i = 1; i <= 31; i++)
+            for (int i = 1; i <= 28; i++)
             {
                 foreach (var item in modelocrud.modelos.OfType<MovimentacaoSaida>()
                 .Where(m => m.Data.ToString("dd/MM/yyyy")
@@ -257,7 +255,7 @@ namespace sistema_financeiro.formulario
             }
 
 
-            for (int i = 1; i <= 31; i++)
+            for (int i = 1; i <= 28; i++)
             {
                 foreach (var item in modelocrud.modelos.OfType<MovimentacaoEntrada>()
                 .Where(m => m.Data.ToString("dd/MM/yyyy")

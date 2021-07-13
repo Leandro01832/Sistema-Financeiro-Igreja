@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarAluguel));
             this.label2 = new System.Windows.Forms.Label();
             this.checkBoxPagou = new System.Windows.Forms.CheckBox();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -66,14 +69,36 @@
             this.txtValor.TabIndex = 280;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 281);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 25);
+            this.label1.TabIndex = 281;
+            this.label1.Text = "Nome do produto:";
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeProduto.Location = new System.Drawing.Point(220, 276);
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(217, 30);
+            this.txtNomeProduto.TabIndex = 282;
+            this.txtNomeProduto.TextChanged += new System.EventHandler(this.txtNomeProduto_TextChanged);
+            // 
             // FrmCadastrarAluguel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtNomeProduto);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.checkBoxPagou);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastrarAluguel";
             this.Text = "FrmCadastrarAluguel";
             this.Load += new System.EventHandler(this.FrmCadastrarAluguel_Load);
@@ -86,5 +111,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBoxPagou;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNomeProduto;
     }
 }

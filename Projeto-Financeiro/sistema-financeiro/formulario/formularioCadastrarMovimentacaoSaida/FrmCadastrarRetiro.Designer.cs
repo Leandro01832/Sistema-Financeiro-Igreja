@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarRetiro));
             this.checkBoxPagou = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtLocal = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // checkBoxPagou
@@ -66,14 +69,36 @@
             this.txtValor.TabIndex = 283;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
+            // txtLocal
+            // 
+            this.txtLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocal.Location = new System.Drawing.Point(204, 288);
+            this.txtLocal.Name = "txtLocal";
+            this.txtLocal.Size = new System.Drawing.Size(217, 30);
+            this.txtLocal.TabIndex = 287;
+            this.txtLocal.TextChanged += new System.EventHandler(this.txtLocal_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(80, 293);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 25);
+            this.label1.TabIndex = 286;
+            this.label1.Text = "Local:";
+            // 
             // FrmCadastrarRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtLocal);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.checkBoxPagou);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastrarRetiro";
             this.Text = "FrmCadastrarRetiro";
             this.Load += new System.EventHandler(this.FrmCadastrarRetiro_Load);
@@ -87,5 +112,7 @@
         private System.Windows.Forms.CheckBox checkBoxPagou;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtLocal;
+        private System.Windows.Forms.Label label1;
     }
 }

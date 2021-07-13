@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace database
 {
@@ -36,7 +37,7 @@ namespace database
         public void salvar()
         {
             if (this is Admin      )  {var modelo = (Admin      )this; bd.Pessoa      .Add(modelo); }
-            if (this is Pessoa     )  {var modelo = (Comprador  )this; bd.Pessoa      .Add(modelo); }
+            if (this is Comprador  )  {var modelo = (Comprador  )this; bd.Pessoa      .Add(modelo); }
             if (this is Dizimo     )  {var modelo = (Dizimo     )this; bd.Movimentacao.Add(modelo); }
             if (this is Oferta     )  {var modelo = (Oferta     )this; bd.Movimentacao.Add(modelo); }
             if (this is Cantina    )  {var modelo = (Cantina    )this; bd.Movimentacao.Add(modelo); }
@@ -107,9 +108,78 @@ namespace database
 
         public List<modelocrud> recuperar()
         {
-             modelos.AddRange( bd.Pessoa      .ToList());
-             modelos.AddRange( bd.Movimentacao.ToList());
-            return modelos;
+            List<modelocrud> lista = new List<modelocrud>();
+            Task<List<modelocrud>> t = Task.Factory.StartNew(() =>
+            {
+                try { lista.AddRange( bd.Pessoa     ); } catch{}
+                return lista;
+            });
+
+            Task<List<modelocrud>> t2 = t.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange( bd.Dizimo     ); } catch{}
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t3 = t2.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Oferta); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t4 = t3.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Cantina); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t5 = t4.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Bazar); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t6 = t5.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Lava_Rapido); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t7 = t6.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Aluguel); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t8 = t7.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Compra); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t9 = t8.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Retiro); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t10 = t9.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Transacao); } catch { }
+                return task.Result;
+            });
+
+            Task<List<modelocrud>> t11 = t10.ContinueWith((task) =>
+            {
+                try { task.Result.AddRange(bd.Transporte); } catch { }
+                return task.Result;
+            });
+
+            Task.WaitAll(t, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11);
+
+            modelos.AddRange(t11.Result);
+
+            return t11.Result;
         }
 
         public List<modelocrud> PesquisarPorData(List<modelocrud> modelos, DateTime comecar, DateTime terminar, string campo)
