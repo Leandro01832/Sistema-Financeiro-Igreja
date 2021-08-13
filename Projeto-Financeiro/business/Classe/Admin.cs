@@ -21,12 +21,9 @@ namespace business.Classe
         {
             
         }
-
-        [NotMapped]
+        
         public static string PrimeiroAdminUser = "leandro";
-        [NotMapped]
         public static string PrimeiroAdminPassword = "01832";
-        [NotMapped]
         public static string PrimeiroAdminPermissao = "Aluguel, Cantina, Compra, Dizimo, Retiro, Transporte, Transacao";
 
 

@@ -291,5 +291,14 @@ namespace sistema_financeiro.formulario
             chart1.ChartAreas[1].Area3DStyle.Rotation = (int)numericGrau.Value;
             chart1.ChartAreas[2].Area3DStyle.Rotation = (int)numericGrau.Value;
         }
+
+        private void btnDescrimina_Click(object sender, EventArgs e)
+        {
+            var lista = modelocrud.modelos.OfType<Movimentacao>()
+                .Where(m => m.Data.ToString("dd/MM/yyyy") == dateEscolhida.Value.ToString("dd/MM/yyyy")).ToList();
+            FrmDescrimina frm = new FrmDescrimina(lista, dateEscolhida.Value);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }

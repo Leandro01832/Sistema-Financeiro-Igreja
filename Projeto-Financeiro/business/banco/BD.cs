@@ -30,5 +30,6 @@ namespace business.banco
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
+        
     }
 }

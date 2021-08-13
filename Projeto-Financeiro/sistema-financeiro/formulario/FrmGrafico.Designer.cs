@@ -53,6 +53,7 @@
             this.checkEnable3D = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numericGrau = new System.Windows.Forms.NumericUpDown();
+            this.btnDescrimina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericGrau)).BeginInit();
             this.SuspendLayout();
@@ -227,11 +228,23 @@
             this.numericGrau.TabIndex = 5;
             this.numericGrau.ValueChanged += new System.EventHandler(this.numericGrau_ValueChanged);
             // 
+            // btnDescrimina
+            // 
+            this.btnDescrimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescrimina.Location = new System.Drawing.Point(0, 27);
+            this.btnDescrimina.Name = "btnDescrimina";
+            this.btnDescrimina.Size = new System.Drawing.Size(337, 33);
+            this.btnDescrimina.TabIndex = 6;
+            this.btnDescrimina.Text = "Descriminar movimentações";
+            this.btnDescrimina.UseVisualStyleBackColor = true;
+            this.btnDescrimina.Click += new System.EventHandler(this.btnDescrimina_Click);
+            // 
             // FrmGrafico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 679);
+            this.Controls.Add(this.btnDescrimina);
             this.Controls.Add(this.numericGrau);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkEnable3D);
@@ -256,5 +269,6 @@
         private System.Windows.Forms.CheckBox checkEnable3D;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericGrau;
+        private System.Windows.Forms.Button btnDescrimina;
     }
 }
