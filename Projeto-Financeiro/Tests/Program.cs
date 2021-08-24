@@ -1,4 +1,5 @@
-﻿using business.Classe;
+﻿using business.banco;
+using business.Classe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +14,28 @@ namespace Tests
         static void Main(string[] args)
         {
 
-            for(int i = 0; i <= 500; i++)
-            {
-                cadastrarDizimo     ();
-                cadastrarOferta     ();
-                cadastrarCantina    ();
-                cadastrarBazar      ();
-                cadastrarLavaRapido ();
-                cadastrarAluguel    ();
-                cadastrarCompra     ();
-                cadastrarRetiro     ();
-                cadastrarTransacao  ();
-                cadastrarTransporte ();
+            //for(int i = 0; i <= 500; i++)
+            //{
+            //    cadastrarDizimo     ();
+            //    cadastrarOferta     ();
+            //    cadastrarCantina    ();
+            //    cadastrarBazar      ();
+            //    cadastrarLavaRapido ();
+            //    cadastrarAluguel    ();
+            //    cadastrarCompra     ();
+            //    cadastrarRetiro     ();
+            //    cadastrarTransacao  ();
+            //    cadastrarTransporte ();
 
-                Console.WriteLine(i.ToString());
-            }
+            //    Console.WriteLine(i.ToString());
+            //}
 
-            Console.ReadLine();
+            BD bd = new BD();
+            var dizimos = bd.Dizimo;
+
+           // Console.WriteLine(dizimos[0].GetType().Name);
+
+            Console.Read();
         }
 
         public static void cadastrarDizimo()

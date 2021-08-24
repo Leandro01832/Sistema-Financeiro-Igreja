@@ -110,67 +110,67 @@ namespace database
             List<modelocrud> lista = new List<modelocrud>();
             Task<List<modelocrud>> t = Task.Factory.StartNew(() =>
             {
-                try { lista.AddRange( bd.Pessoa     ); } catch{}
+                try { lista.AddRange( bd.Pessoa.ToList()     ); } catch{}
                 return lista;
             });
 
             Task<List<modelocrud>> t2 = t.ContinueWith((task) =>
             {
-                try { task.Result.AddRange( bd.Dizimo     ); } catch{}
+                try { task.Result.AddRange( bd.Dizimo.ToList()); } catch{}
                 return task.Result;
             });
 
             Task<List<modelocrud>> t3 = t2.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Oferta); } catch { }
+                try { task.Result.AddRange(bd.Oferta.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t4 = t3.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Cantina); } catch { }
+                try { task.Result.AddRange(bd.Cantina.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t5 = t4.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Bazar); } catch { }
+                try { task.Result.AddRange(bd.Bazar.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t6 = t5.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Lava_Rapido); } catch { }
+                try { task.Result.AddRange(bd.Lava_Rapido.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t7 = t6.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Aluguel); } catch { }
+                try { task.Result.AddRange(bd.Aluguel.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t8 = t7.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Compra); } catch { }
+                try { task.Result.AddRange(bd.Compra.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t9 = t8.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Retiro); } catch { }
+                try { task.Result.AddRange(bd.Retiro.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t10 = t9.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Transacao); } catch { }
+                try { task.Result.AddRange(bd.Transacao.ToList()); } catch { }
                 return task.Result;
             });
 
             Task<List<modelocrud>> t11 = t10.ContinueWith((task) =>
             {
-                try { task.Result.AddRange(bd.Transporte); } catch { }
+                try { task.Result.AddRange(bd.Transporte.ToList()); } catch { }
                 return task.Result;
             });
 

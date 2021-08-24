@@ -15,56 +15,65 @@ namespace sistema_financeiro.formulario
     {
         public FrmPesquisar(Type tipo)
         {
-            this.dgdados.SelectionChanged += Dgdados_SelectionChanged;
-            this.Resultado = new List<modelocrud>();
+            dgdados = new DataGridView();
+            dgdados.SelectionChanged += Dgdados_SelectionChanged;
+            Resultado = new List<modelocrud>();
 
             Id = new CheckBox();
             Id.Visible = false;
             Id.Location = new Point(50, 50);
             Id.CheckedChanged += Id_CheckedChanged;
+            Id.Width = 400;
             Id.Text = "Pesquisar por id";
 
             Nome = new CheckBox();
             Nome.Visible = false;
             Nome.Location = new Point(50, 100);
             Nome.CheckedChanged += Nome_CheckedChanged;
+            Nome.Width = 400;
             Nome.Text = "Pesquisar por nome";
 
             Email = new CheckBox();
             Email.Visible = false;
             Email.Location = new Point(150, 50);
             Email.CheckedChanged += Email_CheckedChanged;
+            Email.Width = 400;
             Email.Text = "Pesquisar por email";
 
            DataMovimetacao = new CheckBox();
            DataMovimetacao.Visible = false;
            DataMovimetacao.Location = new Point(150, 100);
             DataMovimetacao.CheckedChanged += DataMovimetacao_CheckedChanged;
-           DataMovimetacao.Text = "Pesquisar por data da movimentação";
+            DataMovimetacao.Width = 400;
+            DataMovimetacao.Text = "Pesquisar por data da movimentação";
 
            ValorMovimetacao = new CheckBox();
            ValorMovimetacao.Visible = false;
            ValorMovimetacao.Location = new Point(150, 150);
             ValorMovimetacao.CheckedChanged += ValorMovimetacao_CheckedChanged;
-           ValorMovimetacao.Text = "Pesquisar por valor da movimentação";
+            ValorMovimetacao.Width = 400;
+            ValorMovimetacao.Text = "Pesquisar por valor da movimentação";
 
            Pagou = new CheckBox();
            Pagou.Visible = false;
            Pagou.Location = new Point(250, 50);
             Pagou.CheckedChanged += Pagou_CheckedChanged;
-           Pagou.Text = "Pesquisar por status de pagamento";
+            Pagou.Width = 400;
+            Pagou.Text = "Pesquisar por status de pagamento";
 
            PessoaComprou = new CheckBox();
            PessoaComprou.Visible = false;
            PessoaComprou.Location = new Point(250, 100);
             PessoaComprou.CheckedChanged += PessoaComprou_CheckedChanged;
-           PessoaComprou.Text = "Pesquisar por pessoa que comprou";
+            PessoaComprou.Width = 400;
+            PessoaComprou.Text = "Pesquisar por pessoa que comprou";
 
            DataRecebimento = new CheckBox();
            DataRecebimento.Visible = false;
            DataRecebimento.Location = new Point(250, 150);
             DataRecebimento.CheckedChanged += DataRecebimento_CheckedChanged;
-           DataRecebimento.Text = "Pesquisar por data de recebimento da movimentação";
+            DataRecebimento.Width = 400;
+            DataRecebimento.Text = "Pesquisar por data de recebimento da movimentação";
 
             this.Controls.Add(Nome);
             this.Controls.Add(Email);
@@ -155,8 +164,6 @@ namespace sistema_financeiro.formulario
                 Nome.Visible = true;
                 Email.Visible = true;
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Nome", "Nome");
                     Resultado = modelocrud.modelos.OfType<Pessoa>().Cast<modelocrud>().ToList();
                 }
                 if(Tipo == typeof(Movimentacao))
@@ -165,10 +172,6 @@ namespace sistema_financeiro.formulario
                 ValorMovimetacao .Visible = true;
                 Pagou            .Visible = true;
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Data", "Data da movimentação");
-                    dgdados.Columns.Add("Pago", "Status de pagamento");
-                    dgdados.Columns.Add("Valor", "Valor da movimentação");
                     Resultado = modelocrud.modelos.OfType<Movimentacao>().Cast<modelocrud>().ToList();
 
                 }
@@ -177,21 +180,11 @@ namespace sistema_financeiro.formulario
                 PessoaComprou.Visible = true;
                 DataRecebimento.Visible = true;
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Data", "Data da movimentação");
-                    dgdados.Columns.Add("Pago", "Status de pagamento");
-                    dgdados.Columns.Add("Valor", "Valor da movimentação");
-                    dgdados.Columns.Add("DataRecebimento", "Data do recebimento");
-                    dgdados.Columns.Add("Pessoa_", "Iddentificação da pessoa");
                     Resultado = modelocrud.modelos.OfType<MovimentacaoEntrada>().Cast<modelocrud>().ToList();
                 }
                 if (Tipo == typeof(MovimentacaoSaida))
                 {
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Data", "Data da movimentação");
-                    dgdados.Columns.Add("Pago", "Status de pagamento");
-                    dgdados.Columns.Add("Valor", "Valor da movimentação");
                     Resultado = modelocrud.modelos.OfType<MovimentacaoSaida>().Cast<modelocrud>().ToList();
                 }
             }
@@ -208,18 +201,12 @@ namespace sistema_financeiro.formulario
                         DataRecebimento.Visible = true;
                     }
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Data", "Data da movimentação");
-                    dgdados.Columns.Add("Pago", "Status de pagamento");
-                    dgdados.Columns.Add("Valor", "Valor da movimentação");
                 }
                 else if (Tipo.IsSubclassOf(typeof(Pessoa)))
                 {
                     Nome.Visible = true;
                     Email.Visible = true;
                     dgdados.Columns.Clear();
-                    dgdados.Columns.Add("Id", "Id");
-                    dgdados.Columns.Add("Nome", "Nome");
                 }
                 if(Tipo == typeof(Dizimo     )) Resultado = modelocrud.modelos.OfType<Dizimo     >().Cast<modelocrud>().ToList();
                 if(Tipo == typeof(Oferta     )) Resultado = modelocrud.modelos.OfType<Oferta     >().Cast<modelocrud>().ToList();

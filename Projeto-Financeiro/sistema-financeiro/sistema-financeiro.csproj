@@ -327,6 +327,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\relatorio\" />
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>

@@ -46,11 +46,9 @@ D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\sist
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\BouncyCastle.Crypto.dll
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\business.dll
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\itextsharp.dll
-D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.dll
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\business.pdb
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\business.dll.config
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\itextsharp.xml
-D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.xml
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema-financeiro.csprojAssemblyReference.cache
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema_financeiro.formulario.FormProgressBar.resources
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema_financeiro.formulario.FormProgressBar2.resources
@@ -82,3 +80,5 @@ D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sist
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema-financeiro.exe
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema-financeiro.pdb
 D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\obj\Debug\sistema_financeiro.formulario.FrmDescrimina.resources
+D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.dll
+D:\codigo-github\Financeiro\Projeto-Financeiro\sistema-financeiro\bin\Debug\EntityFramework.SqlServer.xml
