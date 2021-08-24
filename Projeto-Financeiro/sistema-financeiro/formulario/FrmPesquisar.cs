@@ -14,9 +14,7 @@ namespace sistema_financeiro.formulario
     public partial class FrmPesquisar : Form
     {
         public FrmPesquisar(Type tipo)
-        {
-            dgdados = new DataGridView();
-            dgdados.SelectionChanged += Dgdados_SelectionChanged;
+        {            
             Resultado = new List<modelocrud>();
 
             Id = new CheckBox();
@@ -84,14 +82,13 @@ namespace sistema_financeiro.formulario
             this.Controls.Add(DataRecebimento);
             
             InitializeComponent();
+            dgdados.SelectionChanged += Dgdados_SelectionChanged;
             Tipo = tipo;
-        }
-
-       
+        }       
 
         private void Dgdados_SelectionChanged(object sender, EventArgs e)
         {
-            var id = dgdados.CurrentRow.Cells[0];
+            var id = dgdados.CurrentRow.Cells["Id"];
             var value = int.Parse(id.Value.ToString());
 
             if (Tipo.IsAbstract)
@@ -128,12 +125,12 @@ namespace sistema_financeiro.formulario
                         if(Modelo is Oferta     ) { FrmCadastrarOferta      form = new FrmCadastrarOferta     (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Cantina    ) { FrmCadastrarCantina     form = new FrmCadastrarCantina    (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Bazar      ) { FrmCadastrarBazar       form = new FrmCadastrarBazar      (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
-                        if(Modelo is Lava_Rapido) { FrmCadastrarLavaRapido  form = new FrmCadastrarLavaRapido(Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
+                        if(Modelo is Lava_Rapido) { FrmCadastrarLavaRapido  form = new FrmCadastrarLavaRapido (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Aluguel    ) { FrmCadastrarAluguel     form = new FrmCadastrarAluguel    (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Compra     ) { FrmCadastrarCompra      form = new FrmCadastrarCompra     (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Retiro     ) { FrmCadastrarRetiro      form = new FrmCadastrarRetiro     (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         if(Modelo is Transacao  ) { FrmCadastrarTransacao   form = new FrmCadastrarTransacao  (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
-                        if(Modelo is Transporte)  { FrmCadastrarTransporte  form = new FrmCadastrarTransporte(Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
+                        if(Modelo is Transporte ) { FrmCadastrarTransporte  form = new FrmCadastrarTransporte (Modelo, false, false, true); form.MdiParent = this.MdiParent; form.Show(); }
                         
                     }
                 }
@@ -155,6 +152,7 @@ namespace sistema_financeiro.formulario
 
         private void FrmPesquisar_Load(object sender, EventArgs e)
         {
+            
             dgdados.Font = new Font("Arial", 18);
 
             if (Tipo.IsAbstract)
